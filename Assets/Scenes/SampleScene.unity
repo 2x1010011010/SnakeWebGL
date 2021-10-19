@@ -12912,6 +12912,7 @@ MonoBehaviour:
   _mover: {fileID: 1384378357}
   _startScreen: {fileID: 1846894571}
   _restartScreen: {fileID: 939797279}
+  _appleSpawner: {fileID: 1568468940}
 --- !u!1 &566014754
 GameObject:
   m_ObjectHideFlags: 0
@@ -15006,6 +15007,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1568468939}
   - component: {fileID: 1568468940}
+  - component: {fileID: 1568468941}
   m_Layer: 0
   m_Name: SpawnersPool
   m_TagString: Untagged
@@ -15074,6 +15076,20 @@ MonoBehaviour:
   - {fileID: 566014754}
   - {fileID: 1288459832}
   - {fileID: 405910343}
+--- !u!114 &1568468941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568468938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6faaff46b74290d4ea0536a043761195, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stubPrefab: {fileID: 4807112375636060010, guid: 049c68a3756fa1840909f345f147efb0,
+    type: 3}
 --- !u!1 &1592190915
 GameObject:
   m_ObjectHideFlags: 0
@@ -15588,7 +15604,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snake
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6222878266991540070, guid: b09f04dd1435a124c942b00f17a1671e,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f7b4d53c31aeb92488b254921072f074, type: 2}
+    m_RemovedComponents:
+    - {fileID: 6222878266991540070, guid: b09f04dd1435a124c942b00f17a1671e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b09f04dd1435a124c942b00f17a1671e, type: 3}
 --- !u!1 &2103236141
 GameObject:
