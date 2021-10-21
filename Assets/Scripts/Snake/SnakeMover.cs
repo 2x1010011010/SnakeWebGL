@@ -67,8 +67,12 @@ public class SnakeMover : MonoBehaviour
 
     public void RemoveTailBone()
     {
-        Destroy(_snakeCircles[0].gameObject);
-        _snakeCircles.RemoveAt(0);
-        _nextPositions.RemoveAt(1);
+        for (int i = 0; i < _snakeCircles.Count; i++)
+        {
+            _nextPositions.RemoveAt(1);
+            Destroy(_snakeCircles[i].gameObject);
+        }
+        _snakeCircles.Clear();
+        
     }
 }

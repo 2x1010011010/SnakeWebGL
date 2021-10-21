@@ -57,6 +57,7 @@ public class GameEventHandler : MonoBehaviour
     private void OnRestartButtonClick()
     {
         _restartScreen.Close();
+        _mover.RemoveTailBone();
         Time.timeScale = 1;
     }
 }

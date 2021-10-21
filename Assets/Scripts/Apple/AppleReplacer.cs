@@ -7,8 +7,11 @@ public class AppleReplacer : MonoBehaviour
     public void Change(GameObject apple)
     {
         GameObject replaced = Instantiate(_stubPrefab, apple.transform);
-        Destroy(apple);
+        Debug.Log(" Instantiate ");
         replaced.SetActive(true);
+        Debug.Log(" SetActive ");
+        Destroy(apple);
+        Debug.Log(" Destroy Apple ");
     }
 
     
