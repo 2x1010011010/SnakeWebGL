@@ -31,4 +31,10 @@ public class Snake : MonoBehaviour
     {
         SnakeDead?.Invoke();
     }
+
+    public void ResetScore()
+    {
+        _score = 0;
+        ScoreChanged?.Invoke();
+    }
 }

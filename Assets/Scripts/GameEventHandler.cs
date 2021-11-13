@@ -7,6 +7,7 @@ public class GameEventHandler : MonoBehaviour
     [SerializeField] private StartScreen _startScreen;
     [SerializeField] private RestartScreen _restartScreen;
     [SerializeField] private AppleSpawner _appleSpawner;
+    [SerializeField] private GameScreen _gameScreen;
 
     private void OnEnable()
     {
@@ -40,6 +41,7 @@ public class GameEventHandler : MonoBehaviour
     private void OnScoreChanged()
     {
         _appleSpawner.ResetSpawner();
+        _gameScreen.ShowScore(_snake.Score);
     }
 
     private void OnSnakeDead()
@@ -58,6 +60,7 @@ public class GameEventHandler : MonoBehaviour
     {
         _restartScreen.Close();
         _mover.RemoveTailBone();
+        _snake.ResetScore();
         Time.timeScale = 1;
     }
 }

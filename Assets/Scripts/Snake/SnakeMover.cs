@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+
 public class SnakeMover : MonoBehaviour
 {
     [SerializeField] private Transform _snakeHead;
@@ -12,11 +13,13 @@ public class SnakeMover : MonoBehaviour
     private Vector2 _movingDirection;
     private List<Transform> _snakeCircles = new List<Transform>();
     private List<Vector2> _nextPositions = new List<Vector2>();
+    private Vector3 _startPosition;
 
     private void Start()
     {
         _mouse = GetComponent<MouseTracker>();
         _nextPositions.Add(_snakeHead.position);
+        _startPosition = _snakeHead.position;
     }
 
     private void Update()
@@ -58,6 +61,11 @@ public class SnakeMover : MonoBehaviour
         }
     }
 
+    private void ResetSnakePosition() 
+    {
+        _snakeHead.position = _startPosition;
+    }
+
     public void AddTailBone()
     {
         GameObject circle = Instantiate(_tailPrefab, _nextPositions[_nextPositions.Count - 1], Quaternion.identity);
@@ -73,6 +81,6 @@ public class SnakeMover : MonoBehaviour
             Destroy(_snakeCircles[i].gameObject);
         }
         _snakeCircles.Clear();
-        
+        ResetSnakePosition();
     }
 }
